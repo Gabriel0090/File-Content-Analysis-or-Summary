@@ -1,0 +1,256 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Aromas de Borboleta - Purple/Lilac/Lavender Palette */
+  --primary: #6B4FA1; /* Deep Purple */
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: #6B4FA1;
+  --sidebar-primary-foreground: #FFFFFF;
+  --chart-1: #D8BFD8; /* Lilac */
+  --chart-2: #C084FC; /* Light Lavender */
+  --chart-3: #A855F7; /* Medium Purple */
+  --chart-4: #7C3AED; /* Vibrant Purple */
+  --chart-5: #6B4FA1; /* Deep Purple */
+  --radius: 0.65rem;
+  --background: oklch(1 0 0); /* White */
+  --foreground: #2D1B4E; /* Dark Purple */
+  --card: oklch(1 0 0); /* White */
+  --card-foreground: #2D1B4E; /* Dark Purple */
+  --popover: oklch(1 0 0); /* White */
+  --popover-foreground: #2D1B4E; /* Dark Purple */
+  --secondary: #D8BFD8; /* Lilac */
+  --secondary-foreground: #2D1B4E; /* Dark Purple */
+  --muted: #E9D5FF; /* Very Light Lavender */
+  --muted-foreground: #7C3AED; /* Vibrant Purple */
+  --accent: #C084FC; /* Light Lavender */
+  --accent-foreground: #FFFFFF;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: #E9D5FF; /* Very Light Lavender */
+  --input: #E9D5FF; /* Very Light Lavender */
+  --ring: #7C3AED; /* Vibrant Purple */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: #2D1B4E; /* Dark Purple */
+  --sidebar-accent: #D8BFD8; /* Lilac */
+  --sidebar-accent-foreground: #2D1B4E; /* Dark Purple */
+  --sidebar-border: #E9D5FF; /* Very Light Lavender */
+  --sidebar-ring: #7C3AED; /* Vibrant Purple */
+}
+
+.dark {
+  --primary: #A855F7;
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: #7C3AED;
+  --sidebar-primary-foreground: #FFFFFF;
+  --background: #1a0f2e; /* Very Dark Purple */
+  --foreground: #E9D5FF; /* Very Light Lavender */
+  --card: #2D1B4E; /* Dark Purple */
+  --card-foreground: #E9D5FF; /* Very Light Lavender */
+  --popover: #2D1B4E; /* Dark Purple */
+  --popover-foreground: #E9D5FF; /* Very Light Lavender */
+  --secondary: #7C3AED; /* Vibrant Purple */
+  --secondary-foreground: #E9D5FF; /* Very Light Lavender */
+  --muted: #4C2D6F; /* Medium Dark Purple */
+  --muted-foreground: #D8BFD8; /* Lilac */
+  --accent: #A855F7; /* Medium Purple */
+  --accent-foreground: #FFFFFF;
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: #4C2D6F; /* Medium Dark Purple */
+  --input: #4C2D6F; /* Medium Dark Purple */
+  --ring: #C084FC; /* Light Lavender */
+  --chart-1: #D8BFD8; /* Lilac */
+  --chart-2: #C084FC; /* Light Lavender */
+  --chart-3: #A855F7; /* Medium Purple */
+  --chart-4: #7C3AED; /* Vibrant Purple */
+  --chart-5: #6B4FA1; /* Deep Purple */
+  --sidebar: #2D1B4E; /* Dark Purple */
+  --sidebar-foreground: #E9D5FF; /* Very Light Lavender */
+  --sidebar-accent: #7C3AED; /* Vibrant Purple */
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #4C2D6F; /* Medium Dark Purple */
+  --sidebar-ring: #C084FC; /* Light Lavender */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+
+  /* Typography - Botanical Elegance */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  /* Custom color utilities for Aromas de Borboleta */
+  .text-purple-900 {
+    @apply text-[#2D1B4E];
+  }
+
+  .text-purple-700 {
+    @apply text-[#6B4FA1];
+  }
+
+  .text-purple-600 {
+    @apply text-[#7C3AED];
+  }
+
+  .bg-purple-900 {
+    @apply bg-[#2D1B4E];
+  }
+
+  .bg-purple-700 {
+    @apply bg-[#6B4FA1];
+  }
+
+  .bg-purple-600 {
+    @apply bg-[#7C3AED];
+  }
+
+  .bg-purple-50 {
+    @apply bg-[#F3E8FF];
+  }
+
+  .bg-lilac-50 {
+    @apply bg-[#F3E8FF];
+  }
+
+  .border-purple-200 {
+    @apply border-[#E9D5FF];
+  }
+
+  .border-purple-300 {
+    @apply border-[#D8BFD8];
+  }
+
+  .shadow-purple-200 {
+    @apply shadow-[0_10px_15px_-3px_rgba(216,191,216,0.3)];
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px - mobile padding */
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* 32px - desktop padding */
+      padding-right: 2rem;
+      max-width: 1280px; /* Standard content width */
+    }
+  }
+}
+
+/* Google Fonts - Botanical Elegance Typography */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+html {
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}

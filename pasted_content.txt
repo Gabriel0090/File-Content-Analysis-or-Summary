@@ -1,0 +1,100 @@
+Este é um pedido excelente. Você tem o design visual (layout) baseado nos templates da "Nature's Essence", mas precisa aplicar a identidade visual real da cliente (Fabiana Rosa / Aromas de Borboleta), que é focada em tons de roxo, lilás e lavanda, conforme o Instagram dela.
+
+Abaixo, criei um Prompt Mestre altamente detalhado. Você pode copiar e colar este texto diretamente no ChatGPT (o modelo o1 ou 4o seria ideal), no Claude 3.5 Sonnet ou no próprio Gemini Advanced para gerar o código.
+
+Copie e cole o texto abaixo na sua IA de preferência: Função: Atue como Engenheiro de Frontend Sênior especializado em React e UX/UI.
+
+Objetivo: Criar o código frontend de um e-commerce completo para uma marca de aromaterapia chamada "Aromas de Borboleta". O projeto deve ser construído em React (usando Vite), estilizado preferencialmente com Tailwind CSS (ou Styled Components, se preferir) e focado em mobile-first.
+
+Contexto da Marca: Embora a estrutura de layout seja baseada em um template genérico de produtos naturais (nas imagens de referência, estilo "Nature's Essence" em verde), você deve obrigatoriamente adaptar a paleta de cores e a identidade para a marca da cliente Fabiana Rosa:
+
+Nome: Aromas de Borboleta.
+
+Logotipo: Borboleta com elementos de lavanda/floral.
+
+Paleta de Cores: Substituir os verdes das referências por tons de Roxo, Lilás, Lavanda e Branco. Use um roxo profundo para botões primários e um lilás suave para fundos de depósito.
+
+Vibe: Artesanal, Terapêutico, Acolhedor, Feminino e Natural.
+
+Requisitos Técnicos:
+
+Framework: React (Vite).
+
+Estilização: Tailwind CSS (para agilidade e consistência).
+
+Ícones: Lucide-React ou React-Icons.
+
+Roteamento: React Router DOM (configurar rotas para Home, Cart, Checkout/Success).
+
+Gerenciamento de Estado: Context API (para gerenciar o Carrinho de Compras globalmente).
+
+Estrutura superior das páginas e componentes:
+
+Mock de Dados (data.js) Crie um arquivo de dados fictícios que reflita os produtos reais do Instagram do cliente:
+Categorias: Óleos Essenciais, Kits Presentes, Sabonetes Artesanais, Sinergias (Blends).
+
+Produtos Exemplo: "Óleo Essencial de Lavanda", "Sinergia Calma e Tranquilidade", "Sabonete de Argila Roxa", "Home Spray de Alecrim".
+
+Header e Navegação Logo "Aromas de Borboleta" à esquerda.
+Links: Início, Óleos, Sabonetes, Sobre a Fabiana.
+
+Ícone de Carrinho no canto direito com um "badge" flutuante mostrando a quantidade de itens.
+
+Página Principal / Loja (Baseada na imagem de listagem) Seção Hero: Uma imagem de fundo relaxante (lavanda/campo) com o título "Aromaterapia & Terapias Naturais por Fabiana Rosa" e um botão "Ver Coleção" (Roxo).
+Barra lateral de Filtros (Esquerda): Categorias (Checkbox), Faixa de Preço.
+
+Grade de Produtos: Cards com:
+
+Imagem do produto.
+
+Etiquetas: "Artesanal", "Mais Vendido".
+
+Nome do Produto.
+
+Preço (R$).
+
+Botão "Adicionar" (com ícone de carrinho).
+
+Efeito Hover: O cartão deve ter uma leve elevação ou sombra roxa ao passar o mouse.
+
+Página do Carrinho (/cart) Lista de Itens: Renderizar os itens adicionais.
+Foto pequena, Nome, Preço unitário.
+
+Controle de Quantidade: Botões + e - e entrada no meio.
+
+Ícone de lixeira para remover item.
+
+Resumo do Pedido (Cartão lateral):
+
+Subtotal.
+
+Estimativa de Frete: Exibir texto "Calculado no Chat".
+
+Total.
+
+Botão de Ação Principal: "Finalizar Pedido pelo WhatsApp" (Cor verde do WhatsApp ou Roxo forte da marca com ícone do WhatsApp).
+
+Nota de Segurança: Abaixo do botão, ícones de "100% Artesanal", "Compra Segura".
+
+Página de Sucesso / Checkout (/success) - Destaque Crítica Esta página simula a finalização. Como é um pequeno negócio, não há gateway de pagamento (Stripe/Mercado Pago).
+Mensagem: "Pedido Gerado com Sucesso! Obrigado, [Nome do Cliente]."
+
+Cartão de Aviso Importante: "Ação Necessária: Para finalizar o pagamento e combinar a entrega, envie os detalhes do pedido para o nosso WhatsApp."
+
+Resumo do Pedido: Lista simples dos itens comprados e valor final.
+
+Botão CTA Gigante: "Enviar Pedido para Fabiana no WhatsApp".
+
+Lógica: Este botão deve abrir um link wa.me// com uma mensagem pré-formatada contendo os itens do carrinho e o total. Ex: Olá Fabiana, gostaria de fechar o pedido: 2x Óleo Lavanda... Total: R$ 100,00.
+
+Instruções Específicas de Design System: Tipografia: Use uma fonte serifada elegante para títulos (ex: Playfair Display ou Merriweather) para passar a sensação de "Artesanal/Premium", e uma sans-serif limpa (Inter ou Lato) para textos corridos.
+
+Bordas: Use round-lg ou round-xl para botões e cartões (suavidade).
+
+Sombras: Sombras suaves e difusas (shadow-purple-100 ou similar).
+
+O que eu espero na sua resposta: O código completo dos componentes principais.
+
+A configuração da API de Contexto (CartContext) para adicionar/remover itens.
+
+A função lógica que formata a mensagem do WhatsApp com os dados do carrinho.
